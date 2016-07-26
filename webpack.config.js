@@ -5,12 +5,12 @@ var ENV = process.env.NODE_ENV;
 
 module.exports = {
   entry: ( ENV == 'production' ?
-           ['./js/main']
+           ['./src/main']
            :
            [
             'webpack-dev-server/client?http://localhost:8080',
             'webpack/hot/dev-server',
-            './js/main'
+            './src/main'
            ]
   ),
   output: {
@@ -35,6 +35,7 @@ module.exports = {
   ),
   devServer: {
     contentBase: './',
-    hot: true
+    hot: true,
+    historyApiFallback: true,
   }
 };
