@@ -8,10 +8,15 @@ export default function Axis(sources){
   const sinks = {
     DOM: xs.of(
       div([
-        img('.Header'),
-        div('.title', 'the axis 2000'),
-        div('.intro','an american made precision smoking heirloom'),
-        div('.ordering','order now'),
+        div('.intro', [
+          div('.mask', [
+            div('.axis-logo'),
+            div('.mask-text', 'an american made precision smoking heirloom')
+          ]),
+          div('.buy-button', [
+            button('.buy-now', 'order now')
+          ])
+        ]),
         div('.testimonials', [
           span('.testimonial','testimonial #1'),
           span('.testimonial','testimonial #2'),

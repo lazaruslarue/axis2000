@@ -1,3 +1,39 @@
-.Header{
-  background-image: url('../../Static/Beach_Case.JPG')
+
+
+// make entire page full body width
+
+.intro {
+  background-image: url('../../Static/intro_image_case.jpg');
+  height: 600px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  .mask {
+    .axis-logo {
+      background-image: url('../../Static/axis_2000_oval_logo.jpg');
+      position: relative;
+      height: 10%;
+      width: 100%;
+    }
+    .mask-text {
+      color: white;
+
+    }
+  }
+}
+
+button.buy-now {
+  color: red;
+}
+
+.testimonials {
+  display: flex;
+  flex-flow: row wrap;
+  height: 250px;
+
+}
+.testimonial {
+  width: 100px;
+  height: 100px;
+  margin: auto;
 }
