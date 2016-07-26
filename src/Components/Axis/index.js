@@ -1,6 +1,6 @@
 import xs from 'xstream'
 import {div, h1, h2, span, ul, li, a, button, img} from '@cycle/dom'
-require('./style.sass')
+require('./style.scss')
 
 // <img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px;">
 

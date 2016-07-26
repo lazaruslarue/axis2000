@@ -34,7 +34,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.sass$/,
+        test: /\.scss$/,
         loaders: ["style", "css", "sass"],
 
       }
