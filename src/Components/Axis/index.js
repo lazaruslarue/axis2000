@@ -1,6 +1,6 @@
 import xs from 'xstream'
 import {div, h1, h2, span, ul, li, a, button, img} from '@cycle/dom'
-
+require('./style.sass')
 
 // <img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px;">
 
@@ -8,11 +8,7 @@ export default function Axis(sources){
   const sinks = {
     DOM: xs.of(
       div([
-        img({props: {
-          src: 'image.jpg',
-          alt: 'image1',
-          style: 'width:304px;height:228px;',
-        }}),
+        img('.Header'),
         div('.title', 'the axis 2000'),
         div('.intro','an american made precision smoking heirloom'),
         div('.ordering','order now'),
