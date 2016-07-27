@@ -5,6 +5,7 @@ import Testimonials from '../../Components/Testimonials'
 import VideoInstructions from '../../Components/VideoInstructions'
 import Share from '../../Components/Share'
 import Navigation from '../../Components/Navigation'
+import Footer from '../../Components/Footer'
 
 require('./style.scss')
 
@@ -25,7 +26,7 @@ export default function Axis(sources){
   let videoInstructionsDOM$ = VideoInstructions().DOM;
   let shareDOM$ = Share().DOM;
   let navigationDOM$ = Navigation().DOM;
-  let other$ = sinks.DOM;
+  let footer$ = Footer().DOM;
 
 
   const axisVdom$ = xs.combine(
@@ -34,14 +35,14 @@ export default function Axis(sources){
     videoInstructionsDOM$,
     shareDOM$,
     navigationDOM$,
-    other$)
+    footer$)
     .map(([
         introVdom,
         testimonialsVdom,
         videoInstructionsVdom,
         shareVdom,
         navigationVdom,
-        sinksVDom
+        footerVdom
       ]) =>{
 
 return    div([
@@ -50,7 +51,7 @@ return    div([
       videoInstructionsVdom,
       shareVdom,
       navigationVdom,
-      sinksVDom
+      footerVdom
     ])
   }
   )
