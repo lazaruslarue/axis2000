@@ -21,7 +21,7 @@ function main(sources) {
   });
 
   return {
-    DOM: page$.map(c => c.DOM).flatten(),
+    DOM: page$.map(c => c.DOM).flatten()
   }
 }
 

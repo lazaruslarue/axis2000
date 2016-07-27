@@ -1,32 +1,32 @@
 import xs from 'xstream'
-import {div, h1, h2, span, ul, li, a, button, img} from '@cycle/dom'
+import {div, h1, h2, span, ul, li, a, button, img, iframe} from '@cycle/dom'
+import Intro from '../../Components/Intro'
+import Testimonials from '../../Components/Testimonials'
 require('./style.scss')
 
-// <img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px;">
 
 export default function Axis(sources){
+
+
+
+
   const sinks = {
     DOM: xs.of(
-      div([
-        div('.intro', [
-          div('.mask', [
-            div('.axis-logo'),
-            div('.mask-text', 'an american made precision smoking heirloom')
-          ]),
-          div('.buy-button', [
-            button('.buy-now', 'order now')
-          ])
-        ]),
-        div('.testimonials', [
-          span('.testimonial','testimonial #1'),
-          span('.testimonial','testimonial #2'),
-        ]),
+      div('.app',[
         div('.video', [
-          span('youtubevideohere')
+          iframe('.instruction-video', {
+            props: {
+              src: "https://www.youtube.com/embed/grsrzjkthh8",
+              frameborder: '0',
+            }
+          })
         ]),
-        div('.sharebuttons',[
-          button('.share','share #1'),
-          button('.share','share #2'),
+        div('.share',[
+          div('.call-to-action', 'tell us your story'),
+          div('.buttons', [
+            button('.share','share #1'),
+            button('.share','share #2'),
+          ])
         ]),
         ul('.nav', [
           li('.howto', 'helpful how-to'),
@@ -34,9 +34,26 @@ export default function Axis(sources){
           li('.story', 'the axis story'),
         ]),
         div('ordern now again'),
-        a(  {props: {href: '/test'}}, 'hsldkfjsldkjfsldkfji')
-      ])
-    )
+        a( '.link',  {
+          props: {href: '/test'}
+        },
+        'hsldkfjsldkjfsldkfji')])
+      )
   }
-  return sinks
+  let introDOM$ = Intro().DOM
+let testimonialsDOM$ = Testimonials().DOM;
+  let other$ = sinks.DOM;
+
+
+  const axisVdom$ = xs.combine(introDOM$, testimonialsDOM$, other$)
+    .map(([introVdom, testimonialsVdom, sinksVDom]) =>{
+
+return    div([
+      introVdom,
+      testimonialsVdom,
+      sinksVDom
+    ])
+  }
+  )
+  return {DOM: axisVdom$}
 }

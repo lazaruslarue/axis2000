@@ -1,19 +1,22 @@
-
-
 // make entire page full body width
+// html, body, #root, .app {
+//   height: 100%;
+// }
 
 .intro {
-  background-image: url('../../Static/intro_image_case.jpg');
-  height: 600px;
-  width: 100%;
+  height: 85vh;
+  background: url('../../Static/intro_image_case.jpg') no-repeat center black;
+  background-size: contain;
   position: relative;
   text-align: center;
   .mask {
     .axis-logo {
-      background-image: url('../../Static/axis_2000_oval_logo.jpg');
-      position: relative;
-      height: 10%;
-      width: 100%;
+      background: url('../../Static/axis_2000_oval_logo.jpg') no-repeat;
+      background-size: contain;
+      background-opacity: 0.8;
+      height: 25vh;
+      // width: 100%;
+      // z-index: 100;
     }
     .mask-text {
       color: white;
@@ -24,6 +27,8 @@
 
 button.buy-now {
   color: red;
+  position: absolute;
+  bottom: 10px;
 }
 
 .testimonials {
@@ -35,5 +40,49 @@ button.buy-now {
 .testimonial {
   width: 100px;
   height: 100px;
+  padding: 0 0 0 0 ;
+  margin-bottom: 0px;
   margin: auto;
+}
+
+.instruction-video {
+  width: 100%,
+}
+
+.testimonials-header {
+    text-align:  center;
+    width:  100%;
+    height:  15%;
+    background: tomato;
+
+}
+
+.testimonials-footer {
+  text-align: center;
+  height:  15%;
+  width: 100%;
+  .inside {
+    background: tomato;
+    width: 8rem;
+    padding: 3rem;
+  }
+}
+
+.instruction-video {
+  height: 400px;
+}
+
+.share {
+
+  text-align: center;
+  height: 24%;
+  .call-to-action {
+    text-transform: uppercase;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+  .buttons {
+    height: auto;
+    color: blue;
+  }
 }
