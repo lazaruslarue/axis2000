@@ -2,6 +2,7 @@ import xs from 'xstream'
 import {div, h1, h2, span, ul, li, a, button, img, iframe} from '@cycle/dom'
 import Intro from '../../Components/Intro'
 import Testimonials from '../../Components/Testimonials'
+import VideoInstructions from '../../Components/VideoInstructions'
 require('./style.scss')
 
 
@@ -13,14 +14,6 @@ export default function Axis(sources){
   const sinks = {
     DOM: xs.of(
       div('.app',[
-        div('.video', [
-          iframe('.instruction-video', {
-            props: {
-              src: "https://www.youtube.com/embed/grsrzjkthh8",
-              frameborder: '0',
-            }
-          })
-        ]),
         div('.share',[
           div('.call-to-action', 'tell us your story'),
           div('.buttons', [
@@ -41,16 +34,27 @@ export default function Axis(sources){
       )
   }
   let introDOM$ = Intro().DOM
-let testimonialsDOM$ = Testimonials().DOM;
+  let testimonialsDOM$ = Testimonials().DOM;
+  let videoInstructionsDOM$ = VideoInstructions().DOM;
   let other$ = sinks.DOM;
 
 
-  const axisVdom$ = xs.combine(introDOM$, testimonialsDOM$, other$)
-    .map(([introVdom, testimonialsVdom, sinksVDom]) =>{
+  const axisVdom$ = xs.combine(
+    introDOM$,
+    testimonialsDOM$,
+    videoInstructionsDOM$,
+    other$)
+    .map(([
+        introVdom,
+        testimonialsVdom,
+        videoInstructionsVdom,
+        sinksVDom
+      ]) =>{
 
 return    div([
       introVdom,
       testimonialsVdom,
+      videoInstructionsVdom,
       sinksVDom
     ])
   }

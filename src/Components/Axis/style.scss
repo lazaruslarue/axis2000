@@ -1,7 +1,7 @@
 // make entire page full body width
-// html, body, #root, .app {
-//   height: 100%;
-// }
+html, body, #root, .app {
+  margin: 0 0 0 0;
+}
 
 .intro {
   height: 85vh;
@@ -14,6 +14,7 @@
       background: url('../../Static/axis_2000_oval_logo.jpg') no-repeat;
       background-size: contain;
       background-opacity: 0.8;
+      background-position: center;
       height: 25vh;
       // width: 100%;
       // z-index: 100;
