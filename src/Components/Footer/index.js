@@ -10,7 +10,7 @@ export default function Footer(sources){
         a( '.link',  {
           props: {href: '/test'}
         },
-        'hsldkfjsldkjfsldkfji')])
+        'link test')])
     )
   }
   return sinks
