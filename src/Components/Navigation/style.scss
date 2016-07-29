@@ -2,7 +2,7 @@
   props where due:
   http://codepen.io/team/css-tricks/pen/YqaKYR
 
-*/ 
+*/
 .navigation {
   list-style: none;
   margin: 0;
@@ -21,6 +21,7 @@
 }
 
 .navigation a {
+  text-transform: capitalize;
   text-decoration: none;
   display: block;
   padding: 1em;

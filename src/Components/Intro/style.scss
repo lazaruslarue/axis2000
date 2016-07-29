@@ -1,0 +1,50 @@
+  /* props https://scotch.io/bar-talk/codepen-challenge-1-css-jiggly-button */
+
+@import url(http://fonts.googleapis.com/css?family=OpenSans:700);
+$buy-yellow: hsla(53, 69%, 60%, .9);
+
+p {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-top: 45vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: 1px 1px 20px 3px hsla(0, 0%, 0%, .6);
+  width: 7em;
+  padding: .4em;
+  color: $buy-yellow;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 hsla(0, 0%, 0%, .25);
+  font: 700 3.1em /1 'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  background: hsla(43, 96%, 8%, 0.73);
+  cursor: pointer;
+}
+
+.anim {
+  animation: jiggle 4s ease-in infinite;
+}
+
+@keyframes jiggle {
+  48%, 62% {
+    transform: scale(1.0, 1.0)
+  }
+  50% {
+    transform: scale(0.99, 0.95)
+  }
+  56% {
+    transform: scale(1.01, 1.05) translate(0, -6px)
+  }
+  59% {
+    transform: scale(1.0, 1.0) translate(0, -6px)
+  }
+}
