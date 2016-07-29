@@ -6,7 +6,7 @@ export default function Intro(sources){
   const sinks = {
     DOM: xs.of(
       div('.intro.flexcontainer.column', [
-        a('.btn.anim', 'order now')
+        a('.btn.anim', { props: {href: '/buy-now'} },'order now')
       ])
     )
   }

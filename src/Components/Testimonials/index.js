@@ -28,6 +28,9 @@ const testimonial_data = [{
 }]
 
 export default function Testimonials(sources){
+
+  let header$ = xs.of(div('.testimonials-header' ,'testimonials'))
+
   let testimonial$ = xs.fromArray(testimonial_data)
     .map(t => {
       return span('.testimonial', t.text)
@@ -38,29 +41,16 @@ export default function Testimonials(sources){
     }, [])
     .map(list => div('.testimonials', list))
 
+  let footer$ = xs.of(div('.testimonials-footer', [
+    div('.inside','testimonials-footer')
+  ]))
 
-  let vDom$ = xs.combine(
-    xs.of(div('.testimonials-header' ,'testimonials')),
-    testimonial$,
-    xs.of(div('.testimonials-footer', [
-      div('.inside','testimonials-footer')
-    ])    ))
+  let vDom$ = xs.combine( header$, testimonial$, footer$)
     .map(([header, content, footer]) => {
       return div([header, content, footer])
     })
 
-  const sinks = {
+  return {
     DOM: vDom$
-      //   xs.of(
-      //   div('.testimonials', [
-      //     div('.testimonials-header' ,'testimonials'),
-      //     span('.testimonial','testimonial #1'),
-      //     span('.testimonial','testimonial #2'),
-      //     div('.testimonials-footer', [
-      //       div('.inside','testimonials-footer')
-      //     ])
-      //   ])
-      // )
   }
-  return sinks
 }

@@ -1,25 +1,14 @@
   /* props https://scotch.io/bar-talk/codepen-challenge-1-css-jiggly-button */
 
-@import url(http://fonts.googleapis.com/css?family=OpenSans:700);
+@import "../Style/_flex.scss";
+@import "../Style/_colors.scss";
+@import "../Style/_fonts.scss";
 
-$buy-yellow: hsla(53, 69%, 60%, .9);
-$button-background: hsla(43, 96%, 8%, 0.73);
-$button-font: 700 3.1rem /1 'Open Sans', sans-serif;
-
-.flexcontainer {
-  display: webkit flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  &.column {
-    flex-direction: column-reverse;
-    -webkit-flex-direction: column-reverse;
-  }
-}
-
+$button-background: hsla(43, 96%, 8%, 0.78);
+$order-button-font: 700 5.4em /1 'Open Sans', sans-serif;
 
 .intro {
-  height: 85vh;
+  height: 100vh;
   max-width: 1334px;
   background: url('../../Static/intro_image.png') no-repeat center black;
   background-size: cover;
@@ -33,14 +22,14 @@ a {
 .btn {
   border-radius: 5px;
   box-shadow: 1px 1px 20px 3px hsla(0, 0%, 0%, .6);
-  width: 7rem;
-  padding: .4rem;
-  color: $buy-yellow;
-  // text-align: center;
+  width: 7em;
+  max-height: .8em;
+  padding: .4em;
   text-transform: uppercase;
   text-shadow: 0 1px 0 hsla(0, 0%, 0%, .25);
-  font: $button-font;
+  font: $order-button-font;
   letter-spacing: 2px;
+  color: $buy-yellow;
   background: $button-background;
   cursor: pointer;
 }
