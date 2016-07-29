@@ -28,7 +28,6 @@ const testimonial_data = [{
 }]
 
 export default function Testimonials(sources){
-
   let header$ = xs.of(div('.testimonials-header' ,'testimonials'))
 
   let testimonial$ = xs.fromArray(testimonial_data)
@@ -39,7 +38,7 @@ export default function Testimonials(sources){
       acc.push(x)
       return acc
     }, [])
-    .map(list => div('.testimonials', list))
+    .map(list => div('.testimonials-body', list))
 
   let footer$ = xs.of(div('.testimonials-footer', [
     div('.inside','testimonials-footer')
@@ -47,7 +46,7 @@ export default function Testimonials(sources){
 
   let vDom$ = xs.combine( header$, testimonial$, footer$)
     .map(([header, content, footer]) => {
-      return div([header, content, footer])
+      return div('.testimonials.flexcontainer', [header, content, footer])
     })
 
   return {
