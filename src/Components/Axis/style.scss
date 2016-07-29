@@ -3,32 +3,7 @@ html, body, #root, .app {
   margin: 0 0 0 0;
 }
 
-.intro {
-  height: 85vh;
-  background: url('../../Static/intro_image_case.jpg') no-repeat center black;
-  background-size: contain;
-  position: relative;
-  text-align: center;
-  .mask {
-    .axis-logo {
-      background: url('../../Static/axis_2000_oval_logo.jpg') no-repeat;
-      background-size: contain;
-      background-opacity: 0.8;
-      background-position: center;
-      height: 25vh;
-    }
-    .mask-text {
-      color: white;
 
-    }
-  }
-}
-
-button.buy-now {
-  color: red;
-  position: absolute;
-  bottom: 10px;
-}
 
 .testimonials {
   display: flex;
