@@ -1,0 +1,80 @@
+// @import "../Style/_flex.scss";
+// @import "../Style/_colors.scss";
+// @import "../Style/_fonts.scss";
+
+.testimonials-header {
+  text-align:  center;
+  height: 3em;
+  padding: 1em;
+  background: tomato;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+.testimonials-body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+}
+.testimonial {
+  flex: 1 50%;
+  height: 40em;
+  align-items: flex-end;
+  position: relative;
+  &.beach {
+    background: url("../../Static/beach.png") no-repeat center;
+    background-size: cover;
+  }
+  &.boot {
+    background: url("../../Static/boot.png") no-repeat center;
+    background-size: cover;
+  }
+
+  .wrapper {
+    &.boot {
+      margin-left: 7rem;
+      margin-right: 1.2rem;
+      bottom: 17rem;
+      position: absolute;
+    }
+    align-self: flex-end;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: .65rem;
+    padding-bottom: .65rem;
+    padding-right: .65rem;
+    padding-left: .65rem;
+
+    background-color: hsla(255, 100%, 100%, 0.4);
+    margin: 5px;
+    .message {
+      // margin-top: .1rem;
+      margin: 0 0 5px 0;
+      font-size: 1rem;
+    }
+    .name {
+      font-size: .8rem;
+      margin: 0;
+      order: 1;
+    }
+    .location {
+      margin: 0;
+      font-size: .65rem;
+      order: 2;
+    }
+  }
+
+}
+
+.testimonials-footer {
+  text-align: center;
+  // height:  15%;
+  // width: 100%;
+  .inside {
+    background: tomato;
+    // width: 8rem;
+    padding: 3rem;
+  }
+}

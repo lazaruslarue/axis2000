@@ -3,36 +3,6 @@ html, body, #root, .app {
   margin: 0 0 0 0;
 }
 
-.testimonials-body {
-  display: flex;
-  flex-flow: row wrap;
-  height: 250px;
-
-}
-.testimonial {
-  width: 100px;
-  height: 100px;
-  padding: 0 0 0 0 ;
-  margin-bottom: 0px;
-  margin: auto;
-}
-
-.testimonials-header {
-    text-align:  center;
-    height: 1rem;
-    background: tomato;
-}
-
-.testimonials-footer {
-  text-align: center;
-  height:  15%;
-  width: 100%;
-  .inside {
-    background: tomato;
-    width: 8rem;
-    padding: 3rem;
-  }
-}
 
 .instruction-video {
   height: 400px;
@@ -40,7 +10,6 @@ html, body, #root, .app {
 }
 
 .share {
-
   text-align: center;
   height: 24%;
   .call-to-action {
