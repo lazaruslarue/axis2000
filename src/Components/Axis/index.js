@@ -50,7 +50,7 @@ return    div([
       testimonialsVdom,
       videoInstructionsVdom,
       shareVdom,
-      navigationVdom,
+      // navigationVdom,
       footerVdom
     ])
   }
