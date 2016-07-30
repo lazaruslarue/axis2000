@@ -1,7 +1,9 @@
 // @import "../Style/_flex.scss";
 // @import "../Style/_colors.scss";
 // @import "../Style/_fonts.scss";
-
+p {
+  font-family: 'Lato', sans-serif;
+}
 .testimonials-header, .testimonials-footer, {
   text-align:  center;
   // height: 3em;
