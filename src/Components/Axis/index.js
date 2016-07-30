@@ -31,8 +31,8 @@ export default function Axis(sources){
 
   const axisVdom$ = xs.combine(
     introDOM$,
-    testimonialsDOM$,
     videoInstructionsDOM$,
+    testimonialsDOM$,
     shareDOM$,
     navigationDOM$,
     footer$)

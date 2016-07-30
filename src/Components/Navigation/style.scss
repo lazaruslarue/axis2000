@@ -17,14 +17,15 @@
   -webkit-flex-flow: row wrap;
   justify-content: flex-end;
   justify-content: space-around;
-
 }
 
 .navigation a {
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
   text-transform: capitalize;
   text-decoration: none;
   display: block;
-  padding: 1em;
+  padding: 1em 0 1em 0;
   color: black;
 }
 

@@ -55,7 +55,7 @@ export default function Testimonials(sources){
 
   let footer$ = xs.of(div('.testimonials-footer', [
     div('.inside', [
-      p('.full-width','Send us your "testimonial" for a chance to win an Axis')
+      p('.full-width','Send your "testimonial" for a chance to win an Axis')
     ])
   ]))
 

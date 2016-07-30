@@ -2,14 +2,20 @@
 // @import "../Style/_colors.scss";
 // @import "../Style/_fonts.scss";
 
-.testimonials-header {
+.testimonials-header, .testimonials-footer, {
   text-align:  center;
-  height: 3em;
+  // height: 3em;
   padding: 1em;
   background: tomato;
   text-transform: uppercase;
   text-decoration: none;
   color: black;
+  p {
+    font-family: 'Lato', sans-serif;
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .testimonials-body {
@@ -68,13 +74,13 @@
 
 }
 
-.testimonials-footer {
-  text-align: center;
-  // height:  15%;
-  // width: 100%;
-  .inside {
-    background: tomato;
-    // width: 8rem;
-    padding: 3rem;
-  }
-}
+// .testimonials-footer {
+//   text-align: center;
+//   // height:  15%;
+//   // width: 100%;
+//   .inside {
+//     background: tomato;
+//     // width: 8rem;
+//     padding: 3rem;
+//   }
+// }
