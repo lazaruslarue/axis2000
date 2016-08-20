@@ -9,7 +9,6 @@ $order-button-font: 700 4.4em /1 'Open Sans', sans-serif;
 
 .intro {
   height: 100vh;
-  max-width: 1334px;
   background: url('../../Static/intro_image.png') no-repeat center black;
   background-size: contain;
   align-items: center;
@@ -22,9 +21,9 @@ a {
 input.btn {
   border-radius: 5px;
   box-shadow: 1px 1px 20px 3px hsla(0, 0%, 0%, .6);
-  width: 7em;
-  max-height: 1em;
-  padding: 0;
+  max-height: 1.1em;
+  padding: 0.1em;
+  margin-bottom: 0.8em;
   text-transform: uppercase;
   text-shadow: 0 1px 0 hsla(0, 0%, 0%, .25);
   font: $order-button-font;

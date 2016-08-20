@@ -40,6 +40,8 @@
     "@cycle/xstream-run": "^3.0.3",
     "cycle-restart": "0.0.14",
     "cyclic-router": "^2.1.2",
+    "history": "^3.0.0",
+    "webpack-dev-server": "^1.14.1",
     "xstream": "^5.0.6"
   }
 }
