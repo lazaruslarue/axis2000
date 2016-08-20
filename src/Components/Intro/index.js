@@ -25,7 +25,7 @@ export default function Intro(sources){
             input('.btn.anim',{props: {
               type: 'submit',
               name: 'submit',
-              value: 'shut up and take my money'
+              value: 'order now'
             }}),
           // a('.btn.anim', { props: {href: '/buy-now'} },'order now')
         ])

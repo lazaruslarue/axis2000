@@ -5,7 +5,7 @@
 @import "../Style/_fonts.scss";
 
 $button-background: hsla(43, 96%, 8%, 0.78);
-$order-button-font: 700 4.4em /1 'Open Sans', sans-serif;
+$order-button-font: 700 4.4em /0 'Open Sans', sans-serif;
 
 .intro {
   height: 100vh;
@@ -18,12 +18,21 @@ a {
   text-decoration: none;
 }
 
+input, textarea {
+  /*
+  // stop safari from giving input buttons
+   http://stackoverflow.com/questions/5263260/stop-safari-mobile-from-giving-input-buttons-rounded-corners#5263502
+  */
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
 input.btn {
   border-radius: 5px;
   box-shadow: 1px 1px 20px 3px hsla(0, 0%, 0%, .6);
   max-height: 1.1em;
-  padding: 0.1em;
-  margin-bottom: 0.8em;
+  padding: 0.5em;
+  margin-bottom: 0.2em;
   text-transform: uppercase;
   text-shadow: 0 1px 0 hsla(0, 0%, 0%, .25);
   font: $order-button-font;
@@ -31,8 +40,16 @@ input.btn {
   color: $buy-yellow;
   background: $button-background;
   cursor: pointer;
+
 }
 
+@media only screen and (width: 760px) {
+
+  .input.btn {
+    color: yellow;
+    max-height: 0.1em;
+  }
+}
 .anim {
   animation: jiggle 4s ease-in infinite;
 }
