@@ -6,12 +6,12 @@ import {makeHTTPDriver} from '@cycle/http'
 import {makeRouterDriver} from 'cyclic-router'
 import {createHistory} from 'history'
 import Axis from './Components/Axis'
-import Testimonials from './Components/Testimonials'
+import Hints from './Components/Hints'
 
 function main(sources) {
   const match$ = sources.router.define({
     '/': Axis,
-    '/testimonials': Testimonials,
+    '/hints': Hints,
   });
 
   const page$ = match$.map(({path, value}) => {
