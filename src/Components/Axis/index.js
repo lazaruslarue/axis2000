@@ -34,14 +34,14 @@ export default function Axis(sources){
     videoInstructionsDOM$,
     testimonialsDOM$,
     shareDOM$,
-    navigationDOM$,
+    // navigationDOM$,
     footer$)
     .map(([
         introVdom,
         testimonialsVdom,
         videoInstructionsVdom,
         shareVdom,
-        navigationVdom,
+        // navigationVdom,
         footerVdom
       ]) =>{
 
@@ -50,7 +50,7 @@ return    div([
       testimonialsVdom,
       videoInstructionsVdom,
       shareVdom,
-      navigationVdom,
+      // navigationVdom,
       footerVdom
     ])
   }
