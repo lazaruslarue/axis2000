@@ -41,6 +41,7 @@ export default function Axis(sources){
 return    div([
       introVdom,
       testimonialsVdom,
+      navigationVdom,
       videoInstructionsVdom,
       shareVdom,
       navigationVdom,

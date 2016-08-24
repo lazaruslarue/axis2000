@@ -10,8 +10,8 @@ import Hints from './Components/Hints'
 
 function main(sources) {
   const match$ = sources.router.define({
-    '/': Axis,
-    '/hints': Hints,
+    '/': Axis, // Main page
+    '/hints': Hints, // Hints page
   });
 
   const page$ = match$.map(({path, value}) => {
