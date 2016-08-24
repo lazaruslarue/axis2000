@@ -30,7 +30,7 @@ export default function Hints(sources){
           p('.title', h.title),
           p('.lead',  h.lead),
           ul('.hint-steps', steps   ),
-          h.img === undefined ? null : img('.hint', {
+          h.img === undefined ? null : img('.hint.photo', {
             props: {src: h.img }
           })
         ])
