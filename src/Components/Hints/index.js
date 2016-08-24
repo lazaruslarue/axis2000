@@ -1,9 +1,7 @@
 import xs from 'xstream'
 import {div, span, p, img, ul, li} from '@cycle/dom'
-let tests = require('./data.hints.js')
+import {hints} from './data.hints.js'
 require('./style.scss')
-console.log(tests)
-let hints = require('./data.hints.js')
 
 export default function Hints(sources){
   let header$ = xs.of(div('.testimonials-header' , [

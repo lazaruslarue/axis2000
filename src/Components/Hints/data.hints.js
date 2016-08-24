@@ -1,4 +1,4 @@
-var hints = [{
+export const hints = [{
   id: 1,
   title: 'Keeping Your AXIS 2000 Clean',
   lead: 'Here are some helpful tips to get the most out of your AXIS 2000',
@@ -26,5 +26,5 @@ var hints = [{
     'The container that you put your tobacco in must be shorter than the large outside container when the top of the outside container is sealed.  This is so the humidified air from the small container with the wet paper towel in it can circulate to your tobacco.',
     'That\'s it.  Just wet the towel, put your tobacco into the medium size container and seal the lid onto the large container.  Keep your tobacco in this humidifier all the time and it will stay soft and moist and will greatly improve your smoking experience, as well as preventing your AXIS - 2000 from getting clogged for longer periods of time.'
   ]
-},
-]
+}
+];
