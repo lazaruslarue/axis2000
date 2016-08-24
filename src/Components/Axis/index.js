@@ -12,14 +12,7 @@ require('./style.scss')
 
 export default function Axis(sources){
   const sinks = {
-    DOM: xs.of(
-      div('.app',[
-        div('ordern now again'),
-        a( '.link',  {
-          props: {href: '/test'}
-        },
-        'hsldkfjsldkjfsldkfji')])
-      )
+    DOM: xs.of( div('.app',[ ] ))
   }
   let introDOM$ = Intro().DOM
   let testimonialsDOM$ = Testimonials().DOM;
@@ -34,14 +27,14 @@ export default function Axis(sources){
     videoInstructionsDOM$,
     testimonialsDOM$,
     shareDOM$,
-    // navigationDOM$,
+    navigationDOM$,
     footer$)
     .map(([
         introVdom,
         testimonialsVdom,
         videoInstructionsVdom,
         shareVdom,
-        // navigationVdom,
+        navigationVdom,
         footerVdom
       ]) =>{
 
@@ -50,7 +43,7 @@ return    div([
       testimonialsVdom,
       videoInstructionsVdom,
       shareVdom,
-      // navigationVdom,
+      navigationVdom,
       footerVdom
     ])
   }
