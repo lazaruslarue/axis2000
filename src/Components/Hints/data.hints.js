@@ -19,6 +19,7 @@ export const hints = [{
 {
   id: 3,
   title: 'How To Build A Simple Humidifier',
+  img: '/src/Static/diy_humidor.JPG',
   lead: 'There are many places where you can easily purchase a Tobacco Humidifier, especially for cigars, but they are also easy to make.',
   steps: [
     'Take a small refrigerator container and punch some holes in the top.  Fold up a paper towel, wet it and put it inside the container.',
