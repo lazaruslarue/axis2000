@@ -1,6 +1,6 @@
 import xs from 'xstream'
 import {div, span, p, img, ul, li} from '@cycle/dom'
-import {hints} from './data.hints.js'
+import {hints} from './data.js'
 require('./style.scss')
 
 export default function Hints(sources){
@@ -8,16 +8,10 @@ export default function Hints(sources){
     p('helpful hints')
   ]))
 
+  // TODO: this could certainly be more reusable
   let hints$ = xs.fromArray(hints)
     .map(h => {
-      let hint_steps$ = xs.fromArray(h.steps)
-        .map(step => {
-          console.log(step);
-          return li('.step', step)
-        })
-        .map(steps => {
-          return ul('.hints', steps)
-        });
+
 
       let steps = [];
       h.steps.forEach((step) => {

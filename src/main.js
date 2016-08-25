@@ -7,11 +7,13 @@ import {makeRouterDriver} from 'cyclic-router'
 import {createHistory} from 'history'
 import Axis from './Components/Axis'
 import Hints from './Components/Hints'
+import Instructions from './Components/Instructions'
 
 function main(sources) {
   const match$ = sources.router.define({
     '/': Axis, // Main page
     '/hints': Hints, // Hints page
+    '/instructions': Instructions, // Instructions page
   });
 
   const page$ = match$.map(({path, value}) => {
