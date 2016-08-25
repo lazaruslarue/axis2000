@@ -1,40 +1,41 @@
 import xs from 'xstream'
-import {div, span, p, img, ul, li} from '@cycle/dom'
-import {instructions} from './data.js'
+import {div, span, p, h1, img, ul, li} from '@cycle/dom'
+import {instructions} from './new_data.js'
 require('./style.scss')
 
 export default function Instructions(sources) {
-  let header$ = xs.of( div('.instructions.header', [
-    p('instructions')
+  let header$ = xs.of( div('.instructions-header', [
+    h1('Instructions for Use')
   ]))
 
   // TODO: this should be a reusable component
   let instructions$ = xs.fromArray(instructions)
-    .map(obj => {
+    .map(data => {
       let instructions = [];
-      obj.steps.forEach((instruction) => {
-        var ele = div('.instruction', [
+
+      data.group_items.forEach((instruction) => {
+        var ele = div('.instruction'+instruction.orientation, [
           instruction.text,
           instruction.img,
         ])
-        // return instructions.push(instruction.text)
         return instructions.push(ele)
       })
 
-      let instruction = span('.instruction', [
+      let instruction = span('.instruction-group', [
         div('.flexcontainer.column.wrapper', [
-          obj.title,
-          div('.instruction-steps', instructions),
-          obj.img
+          data.group_heading,
+          div('.instruction-steps', instructions)
         ])
       ])
+
       return instruction;
     })
     .fold((acc,x)=> {
       acc.push(x);
+      console.log(acc);
       return acc;
     }, [])
-    .map(list => div('.testimonials-body', list))
+    .map(list => div('.instructions-body', list))
 
   let footer$ = xs.of(div('.instructions-footer', [
     div('.inside', [
@@ -44,7 +45,7 @@ export default function Instructions(sources) {
 
   let vDom$ = xs.combine( header$, instructions$, footer$)
     .map(([head, instructions, foot]) => {
-      return div('.instructinos.flexcontainer.column', [head, instructions, foot])
+      return div('.instructions.flexcontainer.column', [head, instructions, foot])
     })
 
   return {

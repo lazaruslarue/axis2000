@@ -1,11 +1,29 @@
-import {h2, div, p, li, img} from '@cycle/dom'
+import {h1, h2, div, p, li, img} from '@cycle/dom'
+
+class Page = {
+  page_name: 'string',
+
+}
+class InstructionsGroup = {
+  id: 0,
+  group_heading: 'group heading text',
+  group_items: ['array of InstructionStep objects']
+}
+class InstructionStep = {
+  id: 0,
+  text: 'text',
+  image: 'image_src.jpg',
+  orientation: 'left or right side orientation',
+}
+
+
 export const instructions = [{
   id: 0,
-  title: h2('Using the Brass Carrying Case'),
-  steps: [
+  title: h1('Instructions for use'),
+  groups: [
     {
       id: 0,
-      text: li('To open the Brass Container Push on the inside piece at the curved notch at one end of the container, sliding out the inside section. To close the Brass Container Make sure the curved notch is on the bottom far end of the inside section.'),
+      text: p('To open the Brass Container Push on the inside piece at the curved notch at one end of the container, sliding out the inside section. To close the Brass Container Make sure the curved notch is on the bottom far end of the inside section.'),
       img: img('.photo', {
         props: {
           src: 'src/Static/Instructions/Thumb_Notch.jpg',
@@ -14,7 +32,7 @@ export const instructions = [{
     },
     {
       id: 1,
-      text: li('Use as a carrying case You can use the sliding brass container to hold The AXIS 2000 and two hand rolled cigaretts.  The container will protect both The AXIS 2000 and your cigarettes from damage and will also prevent any tobacco smell from entering your surroundings.  Place one or two cigarettes inside the container and place the AXIS 2000 in between them before sliding on the outside of the container.'),
+      text: p('Use as a carrying case You can use the sliding brass container to hold The AXIS 2000 and two hand rolled cigaretts.  The container will protect both The AXIS 2000 and your cigarettes from damage and will also prevent any tobacco smell from entering your surroundings.  Place one or two cigarettes inside the container and place the AXIS 2000 in between them before sliding on the outside of the container.'),
       img: div('.photo.group',[
         img('.photo', {
           props: {src: 'src/Static/Instructions/2_Cicaretts_with_AXIS.JPG'}
