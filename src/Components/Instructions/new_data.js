@@ -74,11 +74,11 @@ export const instructions = [{
     }, {
       id: 3,
       text: p('When finished, open the spring clip and remove any remaining small amount of paper.'),
-      img: img('.photo', {
-        props: {
-          src: '',
-        }
-      }),
+      // img: img('.photo', {
+      //   props: {
+      //     src: '',
+      //   }
+      // }),
       orientation: '.right'
     },
   ]
@@ -89,39 +89,39 @@ export const instructions = [{
     {
       id: 0,
       text: p('After using your AXIS 2000 a number of times, some resin from the tobacco will build up inside the brass tubing.  Please follow the instructions below to easily clean the inside of tubing so that it will keep from clogging and you can enjoy it’s use for many years.'),
-      img: img('.photo', {
-        props: {
-          src: '',
-        }
-      }),
+      // img: img('.photo', {
+      //   props: {
+      //     src: '',
+      //   }
+      // }),
       orientation: '.left'
     }, {
       id: 1,
       text: p('Take the cleaning rod supplied with your AXIS 2000  and push it through the tubing.  When it protrudes from the other side, use a paper towel (so you don’t get your hands dirty), and grab the rod and pull it through and out.'),
-      img: img('.photo', {
-        props: {
-          src: '',
-        }
-      }),
-      orientation: '.right'
+      // img: img('.photo', {
+      //   props: {
+      //     src: '',
+      //   }
+      // }),
+      orientation: '.left'
     }, {
       id: 2,
       text: p('You can easily clean the cleaning rod and the ends of the AXIS 2000  by using a small amount of solvent like rubbing alcohol, denatured alcohol,  or even vodka (though there are better uses for vodka than this).'),
-      img: img('.photo', {
-        props: {
-          src: '',
-        }
-      }),
-      orientation: '.right'
+      // img: img('.photo', {
+      //   props: {
+      //     src: '',
+      //   }
+      // }),
+      orientation: '.left'
     }, {
       id: 3,
       text: p('You will find that if you keep your tobacco well humidified,  it will burn slower with more smoke and the tobacco will not be drawn into the brass tubing, so you will have to clean the AXIS 2000 less often.  Please click this link to go to the page on our Website for more information and helpful hints to get the most out of the AXIS 2000 and enhance your smoking experience.'),
-      img: img('.photo', {
-        props: {
-          src: '',
-        }
-      }),
-      orientation: '.right'
+      // img: img('.photo', {
+      //   props: {
+      //     src: '',
+      //   }
+      // }),
+      orientation: '.left'
     },
   ]
 }];

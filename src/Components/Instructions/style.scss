@@ -1,7 +1,10 @@
-div {
+.instructions div {
   border: 1px dashed red;
 }
-
+// .photo{
+//   height: 200px;
+//   width: auto;
+// }
 .instructions-header {
   h1 {
     font-size: 5em;
@@ -29,8 +32,12 @@ div {
     padding: 1em;
     font-size: 1.5em;
   }
-  img {
+  img.photo {
     flex: 1 auto;
+    background-color: black;
+    max-width: 50%;
+    max-height: 20rem;
+    object-fit: contain;
   }
 
   &.right {

@@ -14,7 +14,7 @@ export default function Instructions(sources) {
       let instructions = [];
 
       data.group_items.forEach((instruction) => {
-        var ele = div('.instruction'+instruction.orientation, [
+        var ele = div('.instruction'+ instruction.orientation, [
           instruction.text,
           instruction.img,
         ])
@@ -44,8 +44,8 @@ export default function Instructions(sources) {
   ]))
 
   let vDom$ = xs.combine( header$, instructions$, footer$)
-    .map(([head, instructions, foot]) => {
-      return div('.instructions.flexcontainer.column', [head, instructions, foot])
+    .map(([head, content, foot]) => {
+      return div('.instructions.flexcontainer.column', [head, content, foot])
     })
 
   return {
