@@ -1,20 +1,18 @@
-.instructions div {
-  border: 1px dashed red;
-}
-// .photo{
-//   height: 200px;
-//   width: auto;
-// }
-.instructions-header {
-  h1 {
-    font-size: 5em;
-  }
+@import "../Style/_flex.scss";
+@import "../Style/_colors.scss";
+@import "../Style/_fonts.scss";
+
+#root {
+  background-color: black;
 }
 
 .instruction-group {
   h2 {
-    font-size: 2em;
-    padding-top: 2em;
+    color: black;
+    font-size: 3em;
+    margin-top: 2em;
+    padding: .3em;
+    background-color:  $darken-tomato;
   }
 }
 
@@ -27,19 +25,27 @@
 
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
+
+  align-items: center;
+
+  color: white;
+
   p {
     flex: 3 0px;
     padding: 1em;
-    font-size: 1.5em;
+    font-size: 2em;
   }
+
   img.photo {
     flex: 1 auto;
     background-color: black;
+    padding: 1em;
     max-width: 50%;
     max-height: 20rem;
     object-fit: contain;
   }
 
+  // sick move, props @AaronCremona
   &.right {
     img {
       order: -1

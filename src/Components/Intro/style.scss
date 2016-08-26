@@ -4,9 +4,6 @@
 @import "../Style/_colors.scss";
 @import "../Style/_fonts.scss";
 
-$button-background: hsla(43, 96%, 8%, 0.78);
-$order-button-font: 700 4.4em /0 'Open Sans', sans-serif;
-
 .intro {
   height: 100vh;
   background: url('../../Static/intro_image.png') no-repeat center black;
