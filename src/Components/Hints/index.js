@@ -1,52 +1,64 @@
 import xs from 'xstream'
-import {div, span, p, img, ul, li} from '@cycle/dom'
-import {hints} from './data.js'
+import {div, span, p, h1, h2, img, ul, li} from '@cycle/dom'
+import {hints} from './data'
+import LogoHeader from '../LogoHeader'
+
 require('./style.scss')
 
-export default function Hints(sources){
-  let header$ = xs.of(div('.testimonials-header' , [
-    p('helpful hints')
-  ]))
+export default function Hints(sources) {
+  let logo$ = LogoHeader().DOM;
 
-  // TODO: this could certainly be more reusable
-  let hints$ = xs.fromArray(hints)
-    .map(h => {
+  let text_header$ = xs.of(h1('Helpful Hints'))
 
-
-      let steps = [];
-      h.steps.forEach((step) => {
-        return steps.push(li('.step', step))
-      });
-
-      // make the hints with the steps
-      let hint = span('.hint',  [
-        div('.flexcontainer.column.wrapper', [
-          p('.title', h.title),
-          p('.lead',  h.lead),
-          ul('.hint-steps', steps   ),
-          h.img === undefined ? null : img('.hint.photo', {
-            props: {src: h.img }
-          })
-        ])
-      ]);
-
-      return hint
+  let header$ = xs.combine(logo$, text_header$)
+    .map(([logo, text]) => {
+      return div('.page-header.flexcontainer.column', [
+        logo, text
+      ])
     })
-    .fold((acc, x) => {
+
+  // TODO: this should be a reusable component
+  let instructions$ = xs.fromArray(hints)
+    .map(data => {
+      let instructions = [];
+
+      data.group_items.forEach((instruction) => {
+        var ele = div('.instruction'+ instruction.orientation, [
+          p(instruction.text),
+          instruction.img ? img('.photo', {
+            props: {
+              src: instruction.img,
+            }
+          }) : null,
+        ])
+
+        return instructions.push(ele)
+      })
+
+      let instruction = span('.instruction-group', [
+        div('.flexcontainer.column.wrapper', [
+          h2('.group_heading', data.group_heading),
+          div('.instruction-steps', instructions)
+        ])
+      ])
+
+      return instruction;
+    })
+    .fold((acc,x)=> {
       acc.push(x);
       return acc;
     }, [])
-    .map(list => div('.testimonials-body', list))
+    .map(list => div('.instructions-body', list))
 
-  let footer$ = xs.of(div('.testimonials-footer', [
+  let footer$ = xs.of(div('.instructions-footer', [
     div('.inside', [
       p('.full-width','Send your "testimonial" for a chance to win an Axis')
     ])
   ]))
 
-  let vDom$ = xs.combine( header$, hints$, footer$)
-    .map(([header, hint, footer]) => {
-      return div('.testimonials.flexcontainer.column', [header, hint, footer])
+  let vDom$ = xs.combine(  header$, instructions$, footer$)
+    .map(([head, content, foot]) => {
+      return div('.instructions.flexcontainer.column', [ head, content, foot])
     })
 
   return {
