@@ -9,8 +9,9 @@ export default function Intro(sources){
   return {
     DOM: button$
     .map(button => {
-      return div('.intro.flexcontainer.column-reverse', [
-        button
+      return div('.intro-container', [
+        div('.intro.flexcontainer.column-reverse', [
+          button])
       ])
     })
   }

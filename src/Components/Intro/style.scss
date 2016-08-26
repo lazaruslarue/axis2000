@@ -4,12 +4,19 @@
 @import "../Style/_colors.scss";
 @import "../Style/_fonts.scss";
 
-.intro {
+.intro-container {
   height: 90vh;
-  background: url('../../Static/intro_image.png') no-repeat center black;
+  background: url('../../Static/intro_background.png') repeat black;
+}
+
+
+.intro {
+  height: 100%;
+  background: url('../../Static/intro_image.png') no-repeat center;
   background-size: contain;
   align-items: center;
 }
+
 
 a {
   text-decoration: none;

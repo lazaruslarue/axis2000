@@ -3,6 +3,10 @@ html, body, #root, .app {
   margin: 0 0 0 0;
 }
 
+#root {
+  overflow-x: scroll;
+  // remove horizontal scrollbar so that nav menu is not covered at 100% vh
+}
 
 .instruction-video {
   height: 400px;
