@@ -23,7 +23,6 @@ export default function Axis(sources){
   let navigationDOM$ = Navigation().DOM;
   let footer$ = Footer().DOM;
 
-
   const axisVdom$ = xs.combine(
     analytics$,
     introDOM$,
@@ -45,11 +44,10 @@ export default function Axis(sources){
 return    div([
       analytics,
       introVdom,
-      testimonialsVdom,
       navigationVdom,
+      testimonialsVdom,
       videoInstructionsVdom,
       shareVdom,
-      navigationVdom,
       footerVdom
     ])
   }
