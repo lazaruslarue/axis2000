@@ -1,21 +1,30 @@
 import xs from 'xstream'
 import {div, iframe, p} from '@cycle/dom'
+import Video from '../Video'
+require('./style.scss')
 
 export default function VideoInstructions(sources){
-  const sinks = {
-    DOM: xs.of(
-      div('.video', [
-        div('.testimonials-header' , [
-          p('instructions')
-        ]),
-        iframe('.instruction-video', {
-          props: {
-            src: "https://www.youtube.com/embed/grsrzjkthh8",
-            frameborder: '0',
-          }
-        })
+
+  let url = "https://www.youtube.com/embed/grsrzjkthh8"
+
+  let youtubevid$ = Video(url).DOM;
+
+  const view$ = xs.of(
+    div('.video', [
+      div('.testimonials-header' , 'hi')
+    ])
+  )
+
+  let test$ = youtubevid$
+    .map(ele => {
+      return div('.instruction-video', [
+          ele
       ])
-    )
+    })
+
+  const sinks = {
+    DOM: test$
+
   }
   return sinks
 }
