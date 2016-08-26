@@ -5,7 +5,7 @@
 @import "../Style/_fonts.scss";
 
 .intro {
-  height: 100vh;
+  height: 90vh;
   background: url('../../Static/intro_image.png') no-repeat center black;
   background-size: contain;
   align-items: center;
@@ -13,13 +13,4 @@
 
 a {
   text-decoration: none;
-}
-
-input, textarea {
-  /*
-  // stop safari from giving input buttons
-   http://stackoverflow.com/questions/5263260/stop-safari-mobile-from-giving-input-buttons-rounded-corners#5263502
-  */
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
 }

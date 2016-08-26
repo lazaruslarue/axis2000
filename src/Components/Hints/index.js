@@ -1,19 +1,20 @@
 import xs from 'xstream'
 import {div, span, p, h1, h2, img, ul, li} from '@cycle/dom'
 import {hints} from './data'
-import LogoHeader from '../LogoHeader'
+import Intro from '../Intro'
+import Navigation from '../Navigation'
+import Footer from '../Footer'
 
 require('./style.scss')
 
 export default function Hints(sources) {
-  let logo$ = LogoHeader().DOM;
-
-  let text_header$ = xs.of(h1('Helpful Hints'))
-
-  let header$ = xs.combine(logo$, text_header$)
-    .map(([logo, text]) => {
+  let intro$ = Intro().DOM;
+  let navigation$ = Navigation().DOM;
+  let footer$ = Footer().DOM;
+  let header$ = xs.combine(intro$, navigation$)
+    .map(([intro, navigation]) => {
       return div('.page-header.flexcontainer.column', [
-        logo, text
+        intro, navigation
       ])
     })
 
@@ -49,12 +50,6 @@ export default function Hints(sources) {
       return acc;
     }, [])
     .map(list => div('.instructions-body', list))
-
-  let footer$ = xs.of(div('.instructions-footer', [
-    div('.inside', [
-      p('.full-width','Send your "testimonial" for a chance to win an Axis')
-    ])
-  ]))
 
   let vDom$ = xs.combine(  header$, instructions$, footer$)
     .map(([head, content, foot]) => {

@@ -7,23 +7,13 @@ export default function VideoInstructions(sources){
 
   let url = "https://www.youtube.com/embed/grsrzjkthh8"
 
-  let youtubevid$ = Video(url).DOM;
-
-  const view$ = xs.of(
-    div('.video', [
-      div('.testimonials-header' , 'hi')
-    ])
-  )
-
-  let test$ = youtubevid$
-    .map(ele => {
-      return div('.instruction-video', [
-          ele
-      ])
-    })
-
   const sinks = {
-    DOM: test$
+    DOM: Video(url).DOM
+      .map(ele => {
+        return div('.instruction-video', [
+            ele
+        ])
+      })
 
   }
   return sinks

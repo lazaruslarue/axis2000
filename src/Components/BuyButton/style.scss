@@ -17,13 +17,15 @@ input.btn {
   cursor: pointer;
 }
 
-@media only screen and (width: 760px) {
-
-  .input.btn {
-    color: yellow;
-    max-height: 0.1em;
-  }
+input, textarea {
+  /*
+  // stop safari from giving input buttons
+   http://stackoverflow.com/questions/5263260/stop-safari-mobile-from-giving-input-buttons-rounded-corners#5263502
+  */
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
+
 .anim {
   animation: jiggle 4s ease-in infinite;
 }
