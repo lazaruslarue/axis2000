@@ -1,5 +1,6 @@
 import xs from 'xstream'
 import {div, h1, h2, span, ul, li, a, button, img, iframe} from '@cycle/dom'
+import GA from '../../Components/GA'
 import Intro from '../../Components/Intro'
 import Testimonials from '../../Components/Testimonials'
 import VideoInstructions from '../../Components/VideoInstructions'
@@ -14,7 +15,8 @@ export default function Axis(sources){
   const sinks = {
     DOM: xs.of( div('.app',[ ] ))
   }
-  let introDOM$ = Intro().DOM
+  let analytics$ = GA().DOM;
+  let introDOM$ = Intro().DOM;
   let testimonialsDOM$ = Testimonials().DOM;
   let videoInstructionsDOM$ = VideoInstructions().DOM;
   let shareDOM$ = Share().DOM;
@@ -23,6 +25,7 @@ export default function Axis(sources){
 
 
   const axisVdom$ = xs.combine(
+    analytics$,
     introDOM$,
     videoInstructionsDOM$,
     testimonialsDOM$,
@@ -30,6 +33,7 @@ export default function Axis(sources){
     navigationDOM$,
     footer$)
     .map(([
+        analytics,
         introVdom,
         testimonialsVdom,
         videoInstructionsVdom,
@@ -39,6 +43,7 @@ export default function Axis(sources){
       ]) =>{
 
 return    div([
+      analytics,
       introVdom,
       testimonialsVdom,
       navigationVdom,
