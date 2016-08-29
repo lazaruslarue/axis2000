@@ -12,9 +12,7 @@ require('./style.scss')
 
 
 export default function Axis(sources){
-  const sinks = {
-    DOM: xs.of( div('.app',[ ] ))
-  }
+
   let analytics$ = GA().DOM;
   let introDOM$ = Intro().DOM;
   let testimonialsDOM$ = Testimonials().DOM;
