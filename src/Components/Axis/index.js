@@ -10,15 +10,24 @@ import Footer from '../../Components/Footer'
 
 require('./style.scss')
 
-
 export default function Axis(sources){
+// intent comes from the URL
+
+
+
+// model
+
+
+
+// view
+
 
   let analytics$ = GA().DOM;
   let introDOM$ = Intro().DOM;
   let testimonialsDOM$ = Testimonials().DOM;
   let videoInstructionsDOM$ = VideoInstructions().DOM;
   let shareDOM$ = Share().DOM;
-  let navigationDOM$ = Navigation().DOM;
+  let navigationDOM$ = Navigation(sources).DOM;
   let footer$ = Footer().DOM;
 
   const axisVdom$ = xs.combine(
