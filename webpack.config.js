@@ -5,16 +5,17 @@ var ENV = process.env.NODE_ENV;
 
 module.exports = {
   entry: ( ENV == 'production' ?
-           ['./src/main']
+           [__dirname + '/src/main.js']
            :
            [
             'webpack-dev-server/client?http://localhost:8080',
             'webpack/hot/dev-server',
-            './src/main'
+            __dirname + '/src/main.js'
            ]
   ),
   output: {
-    filename: './dist/bundle.js'
+    path: __dirname + '/dist',
+    filename: 'bundle.js'
   },
   module: {
     loaders: [

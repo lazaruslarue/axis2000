@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack-dev-server -d --progress --colors --inline",
+    "serve": "webpack-dev-server -d --progress --colors --inline --content-base src/",
     "start": "npm install && npm run serve",
     "build": "NODE_ENV=production webpack"
   },
