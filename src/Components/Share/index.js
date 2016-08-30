@@ -1,12 +1,24 @@
 import xs from 'xstream'
-import {div, button, p} from '@cycle/dom'
+import {div, button, p, a, img} from '@cycle/dom'
 require('./style.scss')
+var instagram_icon = require('./Instagram_App_Large_May2016_200.png')
+var facebook_icon = require('./facebook-icon.png')
 
 export default function Share(sources){
   const sinks = {
     DOM: xs.of(
       div('.share',[
         p('.connect-to-us', 'connect with us'),
+        a('.social-out', {props: {href: 'https://www.facebook.com/Axis2000'}}, [
+          img( {
+            props: {src: facebook_icon}
+          }),
+        ]),
+        a('.social-out', {props: {href: 'https://www.instagram.com/theaxis2000/'}}, [
+          img({
+            props: {src: instagram_icon}
+          }),
+        ]),
         div('.flexcontainer.contact-container', [
           div('.contact-item', [
             p('POST OFFICE MAIL'),
@@ -27,11 +39,7 @@ export default function Share(sources){
             p('EMAIL'),
             p('sales@theAxis2000.com')
           ]),
-        ]),
-        // div('.buttons', [
-        //   button('.share','share #1'),
-        //   button('.share','share #2'),
-        // ])
+        ])
       ])
     )
   }

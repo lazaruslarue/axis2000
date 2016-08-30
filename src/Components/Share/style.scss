@@ -1,9 +1,9 @@
 .connect-to-us {
   text-align:  center;
-  padding: 1em;
+  // padding: 1em;
   text-transform: uppercase;
   text-decoration: none;
-  color: black;
+  color: white;
   font-family: 'Lato', sans-serif;
   font-size: 1.5rem;
 }
@@ -11,5 +11,11 @@
   flex-direction: row;
   justify-content: space-around;
 }
+.social-out img {
+  max-height: 10rem;
+  max-width: auto;
+  padding: 1rem;
+}
 .contact-item {
+  color: white;
 }

@@ -1,8 +1,13 @@
 // make entire page full body width
-html, body, #root, .app {
-  margin: 0 0 0 0;
+html, body, .app {
+  margin: 0 auto;
+  max-width: 900px;
+  background: black;
 }
-
+#root {
+  margin: 0 auto;
+  max-width: 900px;
+}
 
 .instruction-video {
   height: 400px;

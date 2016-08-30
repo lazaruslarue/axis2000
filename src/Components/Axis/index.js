@@ -1,5 +1,5 @@
 import xs from 'xstream'
-import {div, h1, h2, span, ul, li, a, button, img, iframe} from '@cycle/dom'
+import {div} from '@cycle/dom'
 import GA from '../../Components/GA'
 import Intro from '../../Components/Intro'
 import Testimonials from '../../Components/Testimonials'
@@ -11,24 +11,16 @@ import Footer from '../../Components/Footer'
 require('./style.scss')
 
 export default function Axis(sources){
-// intent comes from the URL
-
-
-
-// model
-
-
-
 // view
-
-
-  let analytics$ = GA().DOM;
-  let introDOM$ = Intro().DOM;
-  let testimonialsDOM$ = Testimonials().DOM;
-  let videoInstructionsDOM$ = VideoInstructions().DOM;
-  let shareDOM$ = Share().DOM;
+  let analytics$ = GA(sources).DOM;
+  let introDOM$ = Intro(sources).DOM;
+  let testimonialsDOM$ = Testimonials(sources).DOM;
+  let videoInstructionsDOM$ = VideoInstructions(sources).DOM;
+  let shareDOM$ = Share(sources).DOM;
   let navigationDOM$ = Navigation(sources).DOM;
-  let footer$ = Footer().DOM;
+  let footer$ = Footer(sources).DOM;
+
+
 
   const axisVdom$ = xs.combine(
     analytics$,
@@ -49,13 +41,13 @@ export default function Axis(sources){
       ]) =>{
 
 return    div([
-      analytics,
-      introVdom,
-      navigationVdom,
+      // analytics,
+      // introVdom,
+      // navigationVdom,
       testimonialsVdom,
       videoInstructionsVdom,
       shareVdom,
-      footerVdom
+      // footerVdom
     ])
   }
   )

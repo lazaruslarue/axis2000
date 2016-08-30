@@ -56,7 +56,7 @@ export const hints = [
     {
       id: 3,
       text: 'Dry tobacco can easily crumble into dust.',
-      img: '/src/Static/diy_humidor.JPG',
+      img: '/Static/diy_humidor.JPG',
       orientation: '.left',
     },
     {

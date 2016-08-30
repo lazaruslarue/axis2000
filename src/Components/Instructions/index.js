@@ -11,16 +11,13 @@ require('./style.scss')
 
 export default function Instructions(sources) {
   let intro$ = Intro().DOM;
-  let navigation$ = Navigation().DOM;
-  let videoInstructions$ = VideoInstructions().DOM;
+  let navigation$ = Navigation(sources).DOM;
+  let video$ = VideoInstructions(sources).DOM;
   let footer$ = Footer().DOM;
-
-  let text_header$ = xs.of(h1('Instructions for Use'))
-
-  let header$ = xs.combine(intro$, text_header$)
-    .map(([logo, text]) => {
+  let header$ = xs.combine(intro$, navigation$, video$)
+    .map(([intro, navigation, video]) => {
       return div('.page-header.flexcontainer.column', [
-        logo,
+        intro, navigation, video
       ])
     })
 
@@ -58,9 +55,12 @@ export default function Instructions(sources) {
     }, [])
     .map(list => div('.instructions-body', list))
 
-  let vDom$ = xs.combine(  header$, navigation$, videoInstructions$, instructions$, footer$)
-    .map(([head, navigation, video, content, foot]) => {
-      return div('.instructions.flexcontainer.column', [ head, navigation, video, content, foot])
+  let vDom$ = xs.combine(  video$, instructions$)
+    .map(([video, instructions]) => {
+      return div('.instructions.flexcontainer.column', [
+        video,
+        instructions
+      ])
     })
 
   return {

@@ -5,22 +5,22 @@ export const instructions = [{
     {
       id: 0,
       text: 'To open the Brass Container Push on the inside piece at the curved notch at one end of the container, sliding out the inside section. To close the Brass Container Make sure the curved notch is on the bottom far end of the inside section.',
-      img: 'src/Static/Instructions/Thumb_Notch.jpg',
+      img: '/Static/Instructions/Thumb_Notch.jpg',
       orientation: '.left',
     }, {
       id: 1,
       text: 'To close the Brass Container Make sure the curved notch is on the bottom far end of the inside section. Use as a carrying case You can use the sliding brass container to hold The AXIS 2000 and two hand rolled cigarettes.',
-      img: 'src/Static/Instructions/2_Cicaretts_Open_Container.JPG',
+      img: '/Static/Instructions/2_Cicaretts_Open_Container.JPG',
       orientation: '.right',
     }, {
       id: 2,
       text: 'The container will protect both The AXIS 2000 and your cigarettes from damage and will also prevent any tobacco smell from entering your surroundings.',
-      img: 'src/Static/Instructions/2_Cicaretts_with_AXIS.JPG',
+      img: '/Static/Instructions/2_Cicaretts_with_AXIS.JPG',
       orientation: '.left',
     }, {
       id: 3,
       text: 'Place one or two cigarettes inside the container and place the AXIS 2000 in between them before sliding on the outside of the container.',
-      img: 'src/Static/Instructions/2_Cicaretts_Container_Almost_Closed.JPG',
+      img: '/Static/Instructions/2_Cicaretts_Container_Almost_Closed.JPG',
       orientation: '.right',
     }]
 }, {
@@ -30,17 +30,17 @@ export const instructions = [{
     {
       id: 0,
       text: 'Use the spring clip on top of the AXIS 2000 to open up the non-burning end of your cigarette.  Insert the AXIS 2000 into the end of the cigarette and squeeze the spring clip together spreading apart the paper end.  Continue until the paper end is large enough to fit over the end of the brass tubing that is below the clip.',
-      img: 'src/Static/Instructions/Opening_End-Brighter.jpg',
+      img: '/Static/Instructions/Opening_End-Brighter.jpg',
       orientation: '.left',
     }, {
       id: 1,
       text: 'Insert the brass tube into the non-burning end of the cigarette so that the paper is over the brass tubing.  Use the spring clip to gather the excess paper of the cigarette so that it is tight around the brass tubing end, and held by the spring clip.',
-      img: 'src/Static/Instructions/Cigarette_On_AXIS.JPG',
+      img: '/Static/Instructions/Cigarette_On_AXIS.JPG',
       orientation: '.right',
     }, {
       id: 2,
       text: 'Light your cigarette and draw the smoke from the back end of the AXIS 2000.  You will find the smoke will be cooler and less irritating to your throat, enabling you to smoke all the tobacco in your cigarette without waste.  All that will be left when you are finished is a small amount of paper around the outside of the brass tubing and the paper that is held by the clip',
-      img: 'src/Static/Instructions/AXIS_with_Cigarette_1-2015_Rev_2.jpg',
+      img: '/Static/Instructions/AXIS_with_Cigarette_1-2015_Rev_2.jpg',
       orientation: '.left',
     }, {
       id: 3,
