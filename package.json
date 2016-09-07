@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/lazaruslarue/gaia-proto/issues"
   },
-  "homepage": "https://github.com/lazaruslarue/gaia-proto#readme",
+  "homepage": "https://github.com/lazaruslarue/axis2000#readme",
   "devDependencies": {
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
