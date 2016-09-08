@@ -16,7 +16,7 @@ export default function Axis(sources){
   let introDOM$ = Intro(sources).DOM;
   let testimonialsDOM$ = Testimonials(sources).DOM;
   let videoInstructionsDOM$ = VideoInstructions(sources).DOM;
-  let shareDOM$ = Share(sources).DOM;
+  // let shareDOM$ = Share(sources).DOM;
   let navigationDOM$ = Navigation(sources).DOM;
   let footer$ = Footer(sources).DOM;
 
@@ -27,7 +27,7 @@ export default function Axis(sources){
     introDOM$,
     videoInstructionsDOM$,
     testimonialsDOM$,
-    shareDOM$,
+    // shareDOM$,
     navigationDOM$,
     footer$)
     .map(([
@@ -35,7 +35,7 @@ export default function Axis(sources){
         introVdom,
         testimonialsVdom,
         videoInstructionsVdom,
-        shareVdom,
+        // shareVdom,
         navigationVdom,
         footerVdom
       ]) =>{
@@ -46,7 +46,7 @@ return    div([
       // navigationVdom,
       testimonialsVdom,
       videoInstructionsVdom,
-      shareVdom,
+      // shareVdom,
       // footerVdom
     ])
   }
