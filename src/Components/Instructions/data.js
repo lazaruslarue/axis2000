@@ -66,7 +66,10 @@ export const instructions = [{
       orientation: '.left',
     }, {
       id: 3,
-      text: 'You will find that if you keep your tobacco well humidified,  it will burn slower with more smoke and the tobacco will not be drawn into the brass tubing, so you will have to clean the AXIS 2000 less often.  Please click this link to go to the page on our Website for more information and helpful hints to get the most out of the AXIS 2000 and enhance your smoking experience.',
+      text: ['You will find that if you keep your tobacco well humidified,  it will burn slower with more smoke and the tobacco will not be drawn into the brass tubing, so you will have to clean the AXIS 2000 less often.',
+
+// todo: link to hints page      
+    '  Look at the Hints page on our Website for more information and helpful hints to get the most out of the AXIS 2000 and enhance your smoking experience.'].join(''),
       orientation: '.left',
     },
   ]
