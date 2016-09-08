@@ -64,11 +64,21 @@ export const instructions = [{
       id: 2,
       text: 'You can easily clean the cleaning rod and the ends of the AXIS 2000  by using a small amount of solvent like rubbing alcohol, denatured alcohol,  or even vodka (though there are better uses for vodka than this).',
       orientation: '.left',
+    }
+  ]
+}, {
+  id: 1,
+  group_heading: 'If you have trouble cleaning the AXIS',
+  group_items: [
+    {
+      id: 0,
+      text: 'If the inside of the AXIS 2000 tube gets so clogged with resin, you have trouble passing the cleaning rod through it, try using a straight length of coat-hanger wire.  It\'s a little smaller than our cleaning rod and will easily push out anything that is clogging the tube, especially if you use alcohol with it.',
+      orientation: '.left',
     }, {
-      id: 3,
+      id: 1,
       text: ['You will find that if you keep your tobacco well humidified,  it will burn slower with more smoke and the tobacco will not be drawn into the brass tubing, so you will have to clean the AXIS 2000 less often.',
 
-// todo: link to hints page      
+// todo: link to hints page
     '  Look at the Hints page on our Website for more information and helpful hints to get the most out of the AXIS 2000 and enhance your smoking experience.'].join(''),
       orientation: '.left',
     },
