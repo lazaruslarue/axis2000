@@ -67,7 +67,7 @@ export const instructions = [{
     }
   ]
 }, {
-  id: 1,
+  id: 2,
   group_heading: 'If you have trouble cleaning the AXIS',
   group_items: [
     {
@@ -82,5 +82,15 @@ export const instructions = [{
     '  Look at the Hints page on our Website for more information and helpful hints to get the most out of the AXIS 2000 and enhance your smoking experience.'].join(''),
       orientation: '.left',
     },
+  ]
+}, {
+  id: 2,
+  group_heading: 'Patent Information',
+  group_items: [
+    {
+      id: 0,
+      text: 'The AXIS 2000 system is protected by US Patent #9386804. We\'re legally obliged to let you know that, but we also take a lot of pride in the product and want to share that with you.  Please let us know if you have any questions by reaching out to us through the contact details at the bottom of the website.',
+      orientation: '.left',
+    }
   ]
 }];
