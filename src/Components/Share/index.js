@@ -37,7 +37,10 @@ export default function Share(sources){
           ]),
           div('.contact-item', [
             p('EMAIL'),
-            p('sales@theAxis2000.com')
+            p([a({props:{
+              style:"color: orange",
+              href:"mailto:sales@theAxis2000.com?Subject=Axis%20connection"
+            }},'sales@theAxis2000.com')])
           ]),
         ])
       ])
