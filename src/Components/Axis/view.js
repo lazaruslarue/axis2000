@@ -23,7 +23,7 @@ export default function view(state$, sources) {
       ])
     })
 
-  let body$ = state$
+  let body$ = state$.map(c => c.DOM).flatten()
 
     // const axisVdom$ = xs.combine(
     //   analytics$,

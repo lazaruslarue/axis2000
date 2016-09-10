@@ -12,16 +12,15 @@ export default function model(action$, sources) {
     '/instructions': Instructions, // Instructions page
   });
 
-  const page$ = match$.map(({path, value: Component})=>{
+  const component$ = match$.map(({path, value: Component})=>{
     console.log('match');
-    console.log(Component);
+    console.log('path', path, 'Component',Component);
     return Component({
       ...sources,
       router: sources.router.path(path)
     })
   })
 
-  const content$ = page$.map(c => c.DOM).flatten()
-  return content$
+  return component$
 
 }

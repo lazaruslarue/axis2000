@@ -24,7 +24,7 @@ export default function Navigation(sources){
   const storyClick$ = sources.DOM.select('a.story').events('click')
 
   const clicks$ = xs.merge(homeClick$, hintsClick$, storyClick$)
-    .debug(console.log)
+    .debug(e => console.log('test', e) )
     .map(e => event.target.hash.replace('#', ''))
 
   const sinks = {
