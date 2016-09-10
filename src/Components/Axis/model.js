@@ -1,20 +1,27 @@
-import Axis from '../Axis'
+import xs from 'xstream'
+// import Axis from '../Axis'
 import Hints from '../Hints'
 import Instructions from '../Instructions'
+import Navigation from '../Navigation'
 
 export default function model(action$, sources) {
-  const routedContent$ = sources.router.define({
-    '/': Axis, // Main page
+
+  const match$ = sources.router.define({
+    '/': Instructions, // Main page
     '/hints': Hints, // Hints page
     '/instructions': Instructions, // Instructions page
   });
 
-  // page content is the content from the router
-  const pageContent$ = routedContent$.map(({path, value}) => {
-     return value(Object.assign({}, sources, {
-       router: sources.router.path(path)
-     }))
-   });
+  const page$ = match$.map(({path, value: Component})=>{
+    console.log('match');
+    console.log(Component);
+    return Component({
+      ...sources,
+      router: sources.router.path(path)
+    })
+  })
 
-  return pageContent$
+  const content$ = page$.map(c => c.DOM).flatten()
+  return content$
+
 }

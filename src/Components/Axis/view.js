@@ -1,13 +1,17 @@
 import xs from 'xstream'
 import {div} from '@cycle/dom'
 
+import GA from '../GA'
 import Intro from '../Intro'
+import Testimonials from '../Testimonials'
+import VideoInstructions from '../VideoInstructions'
+import Share from '../Share'
 import Navigation from '../Navigation'
 import Footer from '../Footer'
-import GA from '../GA'
+
 
 export default function view(state$, sources) {
-  let intro$ = Intro().DOM;
+  let intro$ = Intro(sources).DOM;
   let navigation$ = Navigation(sources).DOM;
   let footer$ = Footer().DOM;
   let ga$ = GA().DOM;
@@ -19,12 +23,38 @@ export default function view(state$, sources) {
       ])
     })
 
-  const contentDOM$ = state$.map(c => c.DOM).flatten()
+  let body$ = state$
 
-  let wholeVtree$ = xs.combine( header$, navigation$, contentDOM$, footer$, ga$)
-    .map(([head, nav, content, foot, ga]) => {
+    // const axisVdom$ = xs.combine(
+    //   analytics$,
+    //   introDOM$,
+    //   videoInstructionsDOM$,
+    //   testimonialsDOM$,
+    //   navigationDOM$,
+    //   footer$)
+    //   .map(([
+    //       analytics,
+    //       introVdom,
+    //       testimonialsVdom,
+    //       // content$,
+    //       videoInstructionsVdom,
+    //       navigationVdom,
+    //       footerVdom
+    //     ]) =>{
+    //
+    //   return    div([
+    //     // content,
+    //         testimonialsVdom,
+    //         videoInstructionsVdom,
+    //       ])
+    // }
+    // )
+
+
+  let wholeVtree$ = xs.combine( header$, navigation$, body$, footer$, ga$)
+    .map(([head, nav, body, foot, ga]) => {
       return div('.flexcontainer.column', [
-        head, content, foot, ga
+        head, body, foot, ga
       ])
     })
 

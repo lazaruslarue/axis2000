@@ -10,46 +10,23 @@ import Footer from '../../Components/Footer'
 
 require('./style.scss')
 
+// MVI
+import intent from './intent'
+import model from './model';
+import view from './view';
+
+
 export default function Axis(sources){
-// view
-  let analytics$ = GA(sources).DOM;
-  let introDOM$ = Intro(sources).DOM;
-  let testimonialsDOM$ = Testimonials(sources).DOM;
-  let videoInstructionsDOM$ = VideoInstructions(sources).DOM;
-  // let shareDOM$ = Share(sources).DOM;
-  let navigationDOM$ = Navigation(sources).DOM;
-  let footer$ = Footer(sources).DOM;
+  // click actions
+  const action$ = intent(sources.DOM, sources.router)
+  // application state stream
+  const state$ = model(action$, sources)
+  // application view combines static components
+  const view$ = view(state$, sources)
 
 
-
-  const axisVdom$ = xs.combine(
-    analytics$,
-    introDOM$,
-    videoInstructionsDOM$,
-    testimonialsDOM$,
-    // shareDOM$,
-    navigationDOM$,
-    footer$)
-    .map(([
-        analytics,
-        introVdom,
-        testimonialsVdom,
-        videoInstructionsVdom,
-        // shareVdom,
-        navigationVdom,
-        footerVdom
-      ]) =>{
-
-return    div([
-      // analytics,
-      // introVdom,
-      // navigationVdom,
-      testimonialsVdom,
-      videoInstructionsVdom,
-      // shareVdom,
-      // footerVdom
-    ])
+  return {
+    DOM: view$,
+    router: action$
   }
-  )
-  return {DOM: axisVdom$}
 }
