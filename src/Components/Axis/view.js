@@ -25,32 +25,6 @@ export default function view(state$, sources) {
 
   let body$ = state$.map(c => c.DOM).flatten()
 
-    // const axisVdom$ = xs.combine(
-    //   analytics$,
-    //   introDOM$,
-    //   videoInstructionsDOM$,
-    //   testimonialsDOM$,
-    //   navigationDOM$,
-    //   footer$)
-    //   .map(([
-    //       analytics,
-    //       introVdom,
-    //       testimonialsVdom,
-    //       // content$,
-    //       videoInstructionsVdom,
-    //       navigationVdom,
-    //       footerVdom
-    //     ]) =>{
-    //
-    //   return    div([
-    //     // content,
-    //         testimonialsVdom,
-    //         videoInstructionsVdom,
-    //       ])
-    // }
-    // )
-
-
   let wholeVtree$ = xs.combine( header$, navigation$, body$, footer$, ga$)
     .map(([head, nav, body, foot, ga]) => {
       return div('.flexcontainer.column', [
