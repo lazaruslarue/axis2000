@@ -16,7 +16,7 @@ export default function model(action$, sources) {
     console.log('match');
     console.log('path', path, 'Component',Component);
     return Component({
-      ...sources,
+      DOM: sources.DOM,
       router: sources.router.path(path)
     })
   })

@@ -9,15 +9,15 @@ import VideoInstructions from '../VideoInstructions'
 
 require('./style.scss')
 
-export default function Instructions(sources) {
+export default function Instructions() {
   let intro$ = Intro().DOM;
-  let navigation$ = Navigation(sources).DOM;
-  let video$ = VideoInstructions(sources).DOM;
+  // let navigation$ = Navigation(sources).DOM;
+  let video$ = VideoInstructions().DOM;
   let footer$ = Footer().DOM;
-  let header$ = xs.combine(intro$, navigation$, video$)
-    .map(([intro, navigation, video]) => {
+  let header$ = xs.combine( video$)
+    .map(([ video]) => {
       return div('.page-header.flexcontainer.column', [
-        intro, navigation, video
+         video
       ])
     })
 

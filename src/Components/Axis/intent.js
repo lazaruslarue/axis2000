@@ -7,6 +7,4 @@ export default function intent (DOMSource, router) {
     .map(event => event.target.hash.replace('#', ''))
 
   return navClicks$
-
-
 }

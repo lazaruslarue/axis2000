@@ -8,7 +8,7 @@ export default function Navigation(sources){
   const navDom$ = xs.of(
     ul('.navigation', [
       li('.howto',[
-        a('.link.home', { props: {href: '#/index'} }, 'the axis 2000')
+        a('.link.home', { props: {href: '#/'} }, 'the axis 2000')
       ]),
       li('.instructions',[
         a('.link.hints', { props: {href: '#/hints'} }, 'helpful hints')
@@ -18,13 +18,12 @@ export default function Navigation(sources){
       ])
     ])
   )
-
+console.log(sources);
   const homeClick$ = sources.DOM.select('a.home').events('click')
   const hintsClick$ = sources.DOM.select('a.hints').events('click')
   const storyClick$ = sources.DOM.select('a.story').events('click')
 
   const clicks$ = xs.merge(homeClick$, hintsClick$, storyClick$)
-    .debug(e => console.log('test', e) )
     .map(e => event.target.hash.replace('#', ''))
 
   const sinks = {
